@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column; /* จัดองค์ประกอบในแนวตั้ง */
+  background-color: white;
+}
+.container {
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* ให้พื้นที่ส่วนกลางสามารถยืดออกได้ */
+  display: flex; /* ใช้ Flexbox */
+  }     
+  
+.homepage-pic {
+  width: 100%; /* ปรับขนาดรูปภาพให้อยู่ภายในขอบเขต */
+  max-width: 400px; /* ขนาดสูงสุดของรูปภาพ */
+  height: auto;
+  margin: 0 auto 0px; /* เพิ่มระยะห่างด้านล่าง */
+  display: block;
+}
+
+
+.collection-button {
+  font-family: Itim;
+  font-size: 15px;
+  border: none;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #333;
+  color: #f9f9f9;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.title-page {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.detail-start {
+  margin-top: 20px;
+  margin-bottom: 10pox;
+}
+.detail-box {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.detail-price {
+  margin-top: 0;
+}
+.start-button {
+  font-family: itim;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 70px;
+  border: none;
+  border-radius: 20px;
+  background-color: #a6cad5;
+  color: #000000;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.start-button:hover {
+  opacity: 0.9;
+}
+h2 {
+  font-family: Itim;
+  text-align: center;
+  color: #333;
+}
+
+.choice-button {
+  font-family: Itim;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #a6cad5;
+  color: #000000;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  display: block;
+  width: 100%;
+}
+.choice-button:hover {
+  opacity: 0.8; }
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>ค้นหาว่าตัวคุณเป็นมอนสเตอร์ในอาร์ตทอยตัวไหนของเรา | YLRAEN</title>
+    <link rel="stylesheet" href="stylesheet/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="content">
+            <!-- หน้าแรกจะแสดงที่นี่ -->
+        </div>
+    </div>
+    <footer>
+        <p>CREDITED BY YLRAEN & 3tan</p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                text: "ในวันหยุดสุดสัปดาห์ คุณกำลัง...",
+                options: ["วางแผนหรือจัดการสิ่งที่จะทำในวันนั้นอย่างมีระบบ", "ใช้เวลาไปกับงานอดิเรก", "ออกไปพบปะผู้คนใหม่ๆหรือทำกิจกรรมสนุกๆ กับเพื่อน", "วันแบบนี้ต้องอยู่กับคนในครอบครัวสิ", "ลองทำกิจกรรมที่ท้าทายตนเอง" ,"ใช้เวลาค้นคว้าหรือเรียนรู้อะไรที่แปลกใหม่และซับซ้อน"],
+            },
+            {
+                text: "เพื่อนของคุณทักมาเตือนว่าในสัปดาห์หน้าคุณและเพื่อนตัดสินใจไปตั้งแคมป์ในป่า คุณเห็นกระเป๋าเดินทางวางอยู่มุมห้อง คุณจะ...",
+                options: ["ทำรายการสิ่งที่ต้องการจัดและจัดกระเป๋าไว้ตั้งแต่เนิ่นๆ", "จัดกระเป๋าใกล้วันเดินทาง เลือกตามอารมณ์ของตัวเอง", "คิกๆทักหาเพื่อนๆดีกว่า กระเป๋าค่อยว่ากัน", "โอ้! อันนี้ของโปรดเพื่อนฉันเอาได้ด้วยดีกว่า", "รีบยัดแต่ของจำเป็นอย่างรีบเร่งในวันสุดท้าย", "เอาอันนี้ไปดีไหมนะ หรือไม่ดี หรือเอาไปดี"],
+            },
+            {
+                text: "พรุ่งนี้ก็ได้ออกเดินทางแล้ว คุณรู้สึก...",
+                options: ["คงไม่มีอะไรผิดพลาดนะ...", "หวังว่าอากาศจะดี และทุกอย่างจะเป็นไปอย่างราบรื่น", "ตื่นเต้นจังจะได้เจอเพื่อนๆแล้ว","รู้สึกกังวลแปลกๆแฮะ", "จะมีอะไรสนุกๆรออยู่กันนะ", "เริ่มขี้เกียจไปแล้ว..."],
+            },
+            {
+                text: "ระหว่างการเดินทาง เพื่อนของคุณพบเจอสถานที่ใหม่ที่ไม่อยู่ในแผนที่วางไว้แต่อยากไปดู คุณจะ",
+                options: ["ไม่เอาหรอก ถ้าไปถึงช้าทำไง", "แล้วแต่เลย", "ไปกันเถอะ น่าสนุกดีนะ","คนอื่นว่าไง", "จริงเหรอ งั้นฉันขอไปดูก่อนนะ!", "ไปทำไมอ่ะ"],
+            },
+            {
+                text: "คุณและเพื่อนมาถึงจุดหมายแล้ว คุณตัดสินใจเลือกจุดตั้งแคมป์",
+                options: ["จุดที่คุณคิดมาแล้วว่าจะเป็นประโยชน์และสะดวกสบายต่อตัวคุณ", "วิวสวย ๆ เห็นทิวทัศน์ที่สวยงาม", "เลือกจุดที่สะดวกในการทำกิจกรรมต่างๆ","จุดที่เพื่อนและฉันเห็นพ้องกัน", "ริมผาเพื่อความตื่นเต้นหวาดเสียว", "จุดที่เงียบสงบและห่างไกลจากกลุ่มคนอื่นๆ"],
+            },
+            {
+                text: "ระหว่างนั่งชมพระอาทิตย์ตก มีคนเข้ามาทำความรู้จัก คุณจะ...",
+                options: ["แสดงออกและทักทายอย่างมั่นใจ", "เลือกที่จะฟังพวกเขาพูดมากกว่าที่จะเล่าเรื่องของตัวเอง", "ทักทายและชวนคุยอย่างกระตือรือร้น","ต้อนรับและแสดงความอบอุ่น แต่จะไม่เริ่มต้นบทสนทนาเอง", "เปิดบทสนทนาอย่างสนุกสนานและหัวโจกในบทสนทนา", "ถามคำตอบคำ ระมัดระมังในการพูด"],
+            },
+            {
+                text: "เวลาผ่านไป เพื่อนของคุณชวนคุณไปดูดาว แต่คุณเหนื่อยและต้องการการพักผ่อน คุณจะ...",
+                options: ["ฉันไม่ไปดีกว่า ตอนนี้ต้องการพักผ่อนจริงๆ", "ดูก่อนนะ", "น่าเสียดายจัง วันนี้ฉันเหนื่อยแล้ว","ถ้าคุณอยากให้ไปจริงๆ ฉันจะไปด้วย", "โอเค ฉันไปด้วย ใครจะพลาดโอกาสสนุกๆกัน", "เล่าให้ฟังด้วยนะ"],
+            },
+            {
+                text: "ขณะที่กำลังนอนอยู่ เพื่อนของคุณถามว่าหากคุณเลือกไปที่ไหนก็ได้ในโลกเหนือจินตนาการ สถานที่นั้นจะ...",
+                options: ["อาณาจักรแสนยิ่งใหญ่ที่ฉันเป็นจักรพรรดิ", "เมืองสีสันและเสียงดนตรี ทุกสิ่งรอบตัวเปลี่ยนสีตามอารมณ์", "ต้นไม้พูดได้ ท้องฟ้าที่สร้างภาพฝันให้เห็น","หมู่บ้านแห่งความสงบสุขที่หอมกลิ่นขนมปัง อากาศบริสุทธิ์ และธรรมชาติรายล้อม", "แม่น้ำที่เต็มไปด้วยลาวาหรือภูเขาที่สูงที่สุดในโลกและปีนไปถึงยอดแล้วเจอขุมทรัพย์!", "ห้องสมุดแห่งความรู้จักรวาล ที่มีหนังสือทุกเล่มจากทุกมิติ"],
+            },
+            
+            {
+                text: "คุณตื่นมากลางดึกและพบว่าในเต็นท์มีเพียงคุณคนเดียว เพื่อนของคุณหายไป! คุณจึงตัดสินใจตามหาแต่ยิ่งเดินยิ่งหลงเข้าไปในป่าลึก คุณจะ...",
+                options: ["ทำเครื่องหมายบนต้นไม้ทุกก้าวและหาเส้นทางที่สมเหตุสมผลที่สุด", "ใช้สัญชาตญาณและความรู้สึกจากสิ่งรอบตัว", "สร้างเรื่องราวเล็กๆ ในหัวเพื่อให้ตัวเองมีแรงใจ และเดินหน้าหาเพื่อนต่อ","หาที่ปลอดภัยหยุดพักและตั้งสติ คิดถึงความปลอดภัยของเพื่อนอยู่เสมอ", "ปีนต้นไม้เพื่อหาทางออกและลองตะโกนเรียกเพื่อน", "หยุดเดินและใช้ตรรกะคิดถึงทิศทางและดวงดาว"],
+            },
+            {
+                text: "ทันใดนั้นคุณได้ยินเสียงกิ่งไม้หักจากด้านหลัง คุณหันไปมองพบว่าเป็นมอนสเตอร์ตัวหนึ่ง คุณจะ...",
+                options: ["สังเกตจุดอ่อนของมอนสเตอร์ตัวนั้น", "ใช้สิ่งที่อยู่รอบตัวเอาชีวิตรอด", "มันอาจจะไม่ได้ร้ายขนาดนั้นก็ได้นะ...","ตามหาที่หลบภัยที่ปลอดภัย", "เข้ามาเลย!", "มอนสเตอร์ตัวนี้ทำไมถึงมาอยู่ที่นี่? แล้วมันต้องการอะไร?"],
+            },
+            {
+                text: "ปรากฏว่ามอนสเตอร์ตัวนั้นพยายามสื่อสารด้วยท่าทาง คุณจับใจความได้ว่ามันเป็นมิตรและพยายามจะช่วยคุณออกไปจากป่า คุณจะ...",
+                options: ["ไปๆมาๆ นำทางมอนสเตอร์แทน", "ขอบคุณจริงๆนะ", "ขอบใจ ว่าแต่มอนสเตอร์แบบนายเกิดมายังไง","มันดูจริงใจดีนะ ฉันควรจะเชื่อใจมัน", "สวัสดีบัดดี้ พาฉันออกไปจากที่นี่เลย!", "ทำไมถึงช่วยฉัน?"],
+            },
+        ];
+
+        const results = [
+            {
+                image: "thumbnails/GREENY.png",
+            },
+            {
+                image: "thumbnails/ZOM3.png",
+            },
+            {
+                image: "thumbnails/WOOF.png",
+            },
+            {
+                image: "thumbnails/PHAMAOH.png",
+            },
+            {
+                image: "thumbnails/SAMING.png",
+            },
+            {
+                image: "thumbnails/VAMPY.png",
+            },
+        ];
+
+        let currentQuestionIndex = 0;
+        let answersCount = [0, 0, 0, 0, 0, 0]; // เก็บคะแนนของตัวเลือกแต่ละข้อ
+
+        function shuffleArray(array) {
+            // ฟังก์ชันสุ่มลำดับในอาร์เรย์
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function renderWelcomePage() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `
+      <div id="welcome">
+        <p class="title-page">FIND YOUR PERSONALITY WITH OUR ART TOYS</p>
+        <p class="detail-start">มาร่วมทำแบบทดสอบเพื่อค้นหาว่าคุณเป็นอาร์ตทอยตัวไหนของเรา!</p>
+        <button class="collection-button">VIEW OUR COLLECTION</button>
+        <div class="name-info">
+         <img class="homepage-pic" src="thumbnails/boxandone.png">
+        </div>
+        <p class="detail-box">Gravester มอนเตอร์ตัวร้าย</p>
+        <p class="detail-price">601.00 บาท</p>
+        <button class="start-button" onclick="startQuiz()">SHOP NOW</button>
+      </div>
+            `;
+        }
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            answersCount = [0, 0, 0, 0, 0, 0]; // รีเซ็ตคะแนน
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const contentDiv = document.getElementById("content");
+            const question = questions[currentQuestionIndex];
+
+            // จับคู่ตัวเลือกกับดัชนี (index) แล้วสุ่มลำดับ
+            const shuffledOptions = shuffleArray(
+                question.options.map((option, index) => ({ text: option, index }))
+            );
+
+            contentDiv.innerHTML = `
+                <div class="question">
+                    <h2>${question.text}</h2>
+                    ${shuffledOptions
+                        .map(
+                            (option) =>
+                                `<button class="choice-button" onclick="selectAnswer(${option.index})">${option.text}</button>`
+                        )
+                        .join("")}
+                </div>
+            `;
+        }
+
+        function selectAnswer(answerIndex) {
+            answersCount[answerIndex]++; // เพิ่มคะแนนในตัวเลือกที่เลือก
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                renderQuestion(); // แสดงคำถามถัดไป
+            } else {
+                showResult(); // แสดงผลลัพธ์เมื่อจบคำถาม
+            }
+        }
+
+        function showResult() {
+            const maxScore = Math.max(...answersCount); // คะแนนสูงสุด
+            const topChoices = answersCount
+                .map((score, index) => (score === maxScore ? index : -1))
+                .filter((index) => index !== -1); // ตัวเลือกที่มีคะแนนสูงสุด
+
+            const randomChoice =
+                topChoices[Math.floor(Math.random() * topChoices.length)]; // เลือกตัวเลือกแบบสุ่มในกรณีคะแนนเท่ากัน
+
+            const result = results[randomChoice];
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `
+                <div class="result">
+                    <img src="${result.image}" alt="Result Image">
+                </div>
+            `;
+        }
+
+        // เริ่มต้นแสดงหน้าแรก
+        renderWelcomePage();
+    </script>
+</body>
+</html>
