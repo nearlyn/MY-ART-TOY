@@ -157,22 +157,27 @@
         }
 
         function showResult() {
-            const maxScore = Math.max(...answersCount); // คะแนนสูงสุด
-            const topChoices = answersCount
-                .map((score, index) => (score === maxScore ? index : -1))
-                .filter((index) => index !== -1); // ตัวเลือกที่มีคะแนนสูงสุด
+    const maxScore = Math.max(...answersCount); // หาคะแนนสูงสุด
+    const topChoices = answersCount
+        .map((score, index) => (score === maxScore ? index : -1)) // เลือกเฉพาะตัวเลือกที่คะแนนเท่ากับ maxScore
+        .filter((index) => index !== -1); // ตัดค่าที่ไม่ใช่ตัวเลือกออก (-1)
 
-            const randomChoice =
-                topChoices[Math.floor(Math.random() * topChoices.length)]; // เลือกตัวเลือกแบบสุ่มในกรณีคะแนนเท่ากัน
+    // สุ่มหนึ่งตัวเลือกจาก topChoices
+    const randomChoice = topChoices[Math.floor(Math.random() * topChoices.length)];
 
-            const result = results[randomChoice];
-            const contentDiv = document.getElementById("content");
-            contentDiv.innerHTML = `
-                <div class="result">
-                    <img src="${result.image}" alt="Result Image">
-                </div>
-            `;
-        }
+    // ดึงผลลัพธ์ที่ตรงกับตัวเลือกที่สุ่มได้
+    const result = results[randomChoice];
+
+    // แสดงผลลัพธ์ในหน้าเว็บไซต์
+    const contentDiv = document.getElementById("content");
+    contentDiv.innerHTML = `
+        <div class="result">
+            <h2>ผลลัพธ์ของคุณคือ:</h2>
+            <img src="${result.image}" alt="Result Image">
+        </div>
+    `;
+}
+
 
         // เริ่มต้นแสดงหน้าแรก
         renderWelcomePage();
